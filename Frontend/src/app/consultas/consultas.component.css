@@ -1,0 +1,6 @@
+.consultas{
+    cursor: pointer;
+}
+.consultas:hover{
+    background-color: rgba(135, 206, 250, 0.123);
+}

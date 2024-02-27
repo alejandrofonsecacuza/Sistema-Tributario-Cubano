@@ -1,0 +1,38 @@
+<div style="display: flex;">
+    <div class="list-group" style="width: 30%;">
+        <div class="list-group-item list-group-item-action active" aria-current="true">
+          Principales Consultas
+        </div>
+        <a class="list-group-item list-group-item-action consultas"  (click)="RealizarConsulta(0)">Contribuyentes (Personas físicas) que deben pagar todos los impuestos.</a>
+        <a class="list-group-item list-group-item-action consultas" (click)="RealizarConsulta(1)">Registro único tributario de empresas y total de personas titulares de estas.</a>
+        <a class="list-group-item list-group-item-action consultas" (click)="RealizarConsulta(2)">Contribuyentes (Personas físicas) que sólo han realizado pagos en los locales de pago externos.</a>
+        <a class="list-group-item list-group-item-action consultas" (click)="RealizarConsulta(3)">RUT y monto total de los pagos realizados en un período dado de las empresas.</a>
+        <a class="list-group-item list-group-item-action consultas"  (click)="RealizarConsulta(4)">Los 3 primeros impuestos que más han recaudado en un período dado.</a>
+      
+  
+   
+    
+    </div>
+
+
+
+
+      <table class="table table-striped" style="height: 100%;">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col" *ngFor="let atrib of atributos">{{atrib}}</th>
+    
+          </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let elemento of elementos;let i=index">
+                <th scope="row">{{i}}</th>
+                <td *ngFor="let atrib of atributos"> {{elemento[atrib]}}</td>
+      
+            </tr>
+       
+        </tbody>
+      </table>
+</div>
+<!-- <p style="font-weight: bold;font-size: medium;margin: 40px;" id="consulta_p">Consulta SQL...</p> -->

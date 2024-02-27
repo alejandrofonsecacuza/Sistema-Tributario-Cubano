@@ -1,0 +1,32 @@
+<form class="d-flex container" role="search">
+    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" id="name_table" #name_table>
+    <button class="btn btn-outline-primary" type="button" (click)="BuscarTablaBTN(name_table.value,name_table)">Buscar</button>
+  </form>
+<div class="" style="display: flex;justify-content:space-around;">
+  <div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item btn_n" (click)="BuscarTablaBTN('Personas')">Personas</li>
+      <li class="list-group-item btn_n" (click)="BuscarTablaBTN('Impuestos')">Impuestos</li>
+      <li class="list-group-item btn_n " (click)="BuscarTablaBTN('Contribuyentes')">Contribuyentes</li>
+      <li class="list-group-item btn_n " (click)="BuscarTablaBTN('EntidadesRecaudadoras')">Entidades Recaudadoras</li>
+      <li class="list-group-item btn_n " (click)="BuscarTablaBTN('Empresas')">Empresas</li>
+    </ul>
+  </div>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col" *ngFor="let atrib of atributos">{{atrib}}</th>
+
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let elemento of elementos;let i=index">
+            <th scope="row">{{i}}</th>
+            <td *ngFor="let atrib of atributos"> {{elemento[atrib]}}</td>
+  
+        </tr>
+   
+    </tbody>
+  </table>
+</div>
